@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>LBW Detection System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=JetBrains+Mono:wght@300;400&family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 0; background-image:url({{ url_for('static', filename='grass.jpg') }});opacity: 1;font-family:'JetBrains Mono', monospace;">  
+    <div class="container" style="margin:0; max-width: 6700px;" >
+        <div class="row" style="height: 92vh;">
+          <div class="col-lg-5 col-sm-12" style=" background-image: linear-gradient(#c6c683, #baac9b); ">
+            <div class="row" style="height: 15vh;">
+                <div class="col-3"><a href="https://jmrinfotech.com"><img src="{{ url_for('static', filename='jmrlogo.png') }}" alt="JMR logo" width="100%" height="100%">  </a></div>
+                <div class="col" style="color:#020202; margin-top: 3%; font-family: 'Ubuntu', sans-serif;
+                "><h2><b>Leg Before Wicket (LBW) Detection System</b> <h2></div>   
+            </div>
+            <div class="row" style="height: 75vh;">
+                <div style="font-size: 110%;padding: 10%; padding-bottom: 0%;color: #414150;  ">
+                    <h4> Beyond the Naked Eye: The Role of AI in LBW Detection </h4>
+                    <br>
+                    <h4 style="color: #010101;">How was it Made? </h4>
+                    <p style="color: #010101;"><b>The project workflow</b><br>
+                        <ul>
+                            <li>Acquire the video input from our webpage</li>
+                            <li>Our process entails dividing the video into separate frames and
+                                incorporating bounding boxes for the cricket ball, batsman, and stumps
+                                into each individual frame. Subsequently, we merge all frames to
+                                generate the final processed video.</li>
+                            <li>Display the processed video on our webpage with the bounding boxes overlayed onto the cricket ball, batsman and the stump. </li>
+                        </ul>
+                        </p>
+                </div>
+            </div>
+          </div>
+          <div class="col" style="background-color: #cebe9c; padding-top:2%; padding-left:3.5% ; margin:5%; border-style: dotted; border-width: 7px;border-color: rgb(121, 77, 48);  ">
+            <video width="600" height="380" controls>
+                <source src="{{url_for('static',filename='output.mp4')}}" type="video/mp4">
+              Your browser does not support the video tag.
+              </video>
+              <form method="post">
+                <button class="btn btn-danger" type="submit">Return to Home Page</button>
+              </form>
+          </div>
+        </div>
+        <div class="row" style="height: 8vh; background-color:#28282B; color:antiquewhite; padding-left: 45%; padding-top: 0.3%;" >
+            &nbsp; Contact Us Anytime <br> <a href="https://jmrinfotech.com">www.jmrinfotech.com</a>
+        </div>
+    </div>    
+</body>
+</html>
